@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Menú Médico{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">Módulo Médico</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Crear Receta</h5>
+                    <p class="card-text">Registra una nueva receta médica para un paciente.</p>
+                    <a href="{% url 'crear_receta' %}" class="btn btn-primary btn-sm">Ir a Crear</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Listar Recetas</h5>
+                    <p class="card-text">Consulta y administra las recetas médicas existentes.</p>
+                    <a href="{% url 'listar_recetas' %}" class="btn btn-secondary btn-sm">Ir a Listar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

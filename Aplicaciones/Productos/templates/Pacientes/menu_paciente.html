@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Menú pacientes{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">Módulo Paciente</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Visualización de Recetas</h5>
+                    <p class="card-text">Consulta tus recetas emitidas por el médico.</p>
+                    <a href="{% url 'visualizar_recetas' %}" class="btn btn-primary btn-sm">Ver Recetas</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Solicitud de Delivery</h5>
+                    <p class="card-text">Solicita el despacho a domicilio de tus medicamentos.</p>
+                    <a href="{% url 'solicitar_delivery' %}" class="btn btn-success btn-sm">Solicitar Delivery</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Seguimiento de Pedido</h5>
+                    <p class="card-text">Consulta el estado de tu pedido en tiempo real.</p>
+                    <a href="{% url 'seguimiento_pedido' %}" class="btn btn-secondary btn-sm">Ver Seguimiento</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

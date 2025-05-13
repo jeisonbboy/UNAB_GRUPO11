@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Crear Receta{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">Crear Receta Médica</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="paciente" class="form-label">Paciente</label>
+                            <input type="text" id="paciente" name="paciente" class="form-control" placeholder="Nombre del paciente" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="medicamentos" class="form-label">Medicamentos</label>
+                            <textarea id="medicamentos" name="medicamentos" class="form-control" rows="3" placeholder="Lista de medicamentos" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dosis" class="form-label">Dosis</label>
+                            <textarea id="dosis" name="dosis" class="form-control" rows="2" placeholder="Dosis recomendada" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="observaciones" class="form-label">Observaciones</label>
+                            <textarea id="observaciones" name="observaciones" class="form-control" rows="2" placeholder="Observaciones adicionales (opcional)"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <a href="{% url 'menu_medico' %}" class="btn btn-secondary">Cancelar</a>
+                            <button type="submit" class="btn btn-primary">Guardar Receta</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Visualización de Recetas{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">Mis Recetas</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Medicamentos</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for receta in recetas %}
+            <tr>
+                <td>{{ receta.fecha }}</td>
+                <td>{{ receta.medicamentos }}</td>
+                <td>{{ receta.estado }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3" class="text-center">No tienes recetas disponibles.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

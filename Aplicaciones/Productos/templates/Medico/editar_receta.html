@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Receta{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2 class="mb-4">Editar Receta</h2>
+    <form method="POST" class="card p-4 shadow-sm">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="paciente" class="form-label">Paciente</label>
+            <input type="text" id="paciente" name="paciente" value="{{ receta.paciente }}" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="medicamentos" class="form-label">Medicamentos</label>
+            <textarea id="medicamentos" name="medicamentos" class="form-control" rows="3" required>{{ receta.medicamentos }}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="dosis" class="form-label">Dosis</label>
+            <textarea id="dosis" name="dosis" class="form-control" rows="2" required>{{ receta.dosis }}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="observaciones" class="form-label">Observaciones</label>
+            <textarea id="observaciones" name="observaciones" class="form-control" rows="2">{{ receta.observaciones }}</textarea>
+        </div>
+        <div class="d-flex justify-content-between">
+            <a href="{% url 'listar_recetas' %}" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

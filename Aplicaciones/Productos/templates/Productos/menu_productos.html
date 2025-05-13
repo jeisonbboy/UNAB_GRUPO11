@@ -1,0 +1,33 @@
+<!-- filepath: c:\Users\jeison\Desktop\MATERIAS UNAB\TALL DE DESARROLLO WEB Y MÓVIL\unabweb\Aplicaciones\Productos\templates\Productos\menu_productos.html -->
+{% extends "base.html" %}
+
+{% block title %}Menú Productos{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">Módulo de Productos</h2>
+    <div class="row justify-content-center">
+        <!-- Gestión de Productos -->
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Gestión de Productos</h5>
+                    <p class="card-text">Agrega y administra los productos disponibles en el sistema.</p>
+                    <a href="/productos/gestion/" class="btn btn-primary btn-sm">Ir a Gestión</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edición de Productos -->
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Edición de Productos</h5>
+                    <p class="card-text">Edita los productos existentes en el sistema.</p>
+                    <a href="/productos/edicion/" class="btn btn-secondary btn-sm">Ir a Edición</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

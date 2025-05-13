@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Listar Recetas{% endblock %}
+
+{% block body %}
+<h2>Recetas Médicas</h2>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Paciente</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if recetas %}
+            {% for receta in recetas %}
+                <tr>
+                    <td>{{ receta.paciente }}</td>
+                    <td>{{ receta.fecha_emision }}</td>
+                    <td>{{ receta.estado }}</td>
+                    <td>
+                        <a href="{% url 'editar_receta' receta.id %}" class="btn btn-sm btn-warning">Editar</a>
+                        <a href="{% url 'eliminar_receta' receta.id %}" class="btn btn-sm btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="4">No hay recetas disponibles.</td>
+            </tr>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

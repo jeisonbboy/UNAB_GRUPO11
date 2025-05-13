@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Solicitud de Delivery{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">Solicitar Delivery</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="receta" class="form-label">Selecciona una receta</label>
+            <select id="receta" name="receta" class="form-control">
+                <option value="">Selecciona...</option>
+                <!-- Aquí puedes cargar las recetas del paciente -->
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Solicitar</button>
+    </form>
+</div>
+{% endblock %}
